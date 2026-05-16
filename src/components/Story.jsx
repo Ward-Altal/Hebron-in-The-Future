@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import AnimatedTitle from './AnimatedTitle';
 import { gsap } from 'gsap';
 import Button from './Button';
+import { assetPath } from '../utils/assetPath';
 function Story() {
   const frameRef = useRef(null);
 
@@ -64,7 +65,7 @@ function Story() {
                   onMouseUp={handleMouseLeave}
                   onMouseEnter={handleMouseLeave}
                   onMouseMove={handleMouseMove}
-                  src="/img/img6.png"
+                  src={assetPath('img/img6.png')}
                   alt="entrance"
                   className="object-contain w-full rounded-xl shadow-2xl"
                 />

@@ -2,6 +2,7 @@ import React from 'react'
 import { TiLocationArrow } from 'react-icons/ti'
 import { useState } from 'react'
 import { useRef } from 'react'
+import { assetPath } from '../utils/assetPath'
 
 const BentoTilt = ({ children, className='' }) => {
 
@@ -73,7 +74,7 @@ function Features() {
       
         <BentoTilt className="relative mb-10 h-[40vh] md:h-[65vh] w-full overflow-hidden rounded-xl">
           <BentoCard
-            src="/img/img1.png"
+            src={assetPath('img/img1.png')}
             title={<><b>skyscraper</b></>}
             description="The future of Hebron could be breathtaking — a modern city filled with towering skyscrapers, advanced architecture, and vibrant urban life. Huge glass towers could rise across the skyline, turning Hebron into a powerful center for business, technology, and tourism. Modern streets, luxury malls, smart transportation, and glowing city lights would give the city a futuristic atmosphere while still preserving its rich history and culture.
 
@@ -86,7 +87,7 @@ Hebron would become a symbol of growth and ambition."
         
           <BentoTilt className="bento-tilt_1 md:row-span-2  ">
             <BentoCard 
-              src="/img/img2.png"
+              src={assetPath('img/img2.png')}
               title={<><b>Highways</b></>}
               description="The future of Hebron could feature massive wide highways connecting every part of the city with speed and efficiency. Modern multi-lane roads lined with palm trees, smart lighting, and futuristic bridges would transform transportation and reduce traffic."
             />
@@ -95,7 +96,7 @@ Hebron would become a symbol of growth and ambition."
      
           <BentoTilt className="bento-tilt_1">
             <BentoCard
-              src="/img/img3.png"
+              src={assetPath('img/img3.png')}
               title={<><b>City Plaza</b></>}
               description="A future Harbor City plaza could become a central landmark where residents and visitors gather for events, relaxation, and daily life — bringing together modern architecture, green spaces, and waterfront views in one connected urban experience."
             />
@@ -104,7 +105,7 @@ Hebron would become a symbol of growth and ambition."
        
           <BentoTilt className="bento-tilt_1">
             <BentoCard
-              src="/img/img11.png"
+              src={assetPath('img/img11.png')}
               title={<><b>Wide Parking</b></>}
               description="The parking areas will be carefully planned to support the city’s modern infrastructure, offering organized layouts, smooth traffic flow, and easy connectivity to public gathering spaces. This vision reflects Harbor City’s goal of combining functionality, comfort, and modern urban living in one destination."
             />
@@ -121,7 +122,7 @@ Hebron would become a symbol of growth and ambition."
       
           {/* <BentoTilt className="bento-tilt_2 overflow-hidden rounded-xl">
             <video
-              src="/videos/hit.mp4"
+              src={assetPath('videos/hit.mp4')}
               loop
               muted
               autoPlay

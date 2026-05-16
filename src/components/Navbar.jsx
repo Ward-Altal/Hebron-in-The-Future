@@ -1,21 +1,22 @@
-import React, { use, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useRef } from 'react'
 import Button from './Button';
 import { TiLocationArrow } from 'react-icons/ti';
 import { useState } from 'react';
 import { useWindowScroll } from 'react-use';
 import { gsap } from 'gsap';
+import { assetPath } from '../utils/assetPath';
 
 
 function Navbar() {
 
     const [isAudioPlaying, setIsAudioPlaying] = React.useState(false);
     const [isIndicatorActive, setIsIndicatorActive] = React.useState(false);
-    const [lastScrollY, setLastScrollY] = useState(0);
     const [isNavVisible, setIsNavVisible] = useState(true);
 
     const navContainerRef = React.useRef(null);
     const audioElementRef = useRef(null);
+    const lastScrollYRef = useRef(0);
 
     const { y: currentScrollY } = useWindowScroll();
     useEffect(() => {
@@ -23,16 +24,16 @@ function Navbar() {
             setIsNavVisible(true);
             navContainerRef.current.classList.remove('floating-nav');
         }
-        else if (currentScrollY > lastScrollY) {
+        else if (currentScrollY > lastScrollYRef.current) {
             setIsNavVisible(false);
             navContainerRef.current.classList.add('floating-nav');
         }
-        else if (currentScrollY < lastScrollY) {
+        else if (currentScrollY < lastScrollYRef.current) {
             setIsNavVisible(true);
             navContainerRef.current.classList.add('floating-nav');
         }
 
-        setLastScrollY(currentScrollY);
+        lastScrollYRef.current = currentScrollY;
     }, [currentScrollY]);
 
     useEffect(() => {
@@ -67,7 +68,7 @@ function Navbar() {
             <header className='absolute top-1/2 w-full -translate-y-1/2'>
                 <nav className='flex size-full items-center justify-between p-4'>
                     <div className='flex items-center gap-7'>
-                        <img src="/img/logo.png" alt="logo" className='w-10' />
+                        <img src={assetPath('img/logo.png')} alt="logo" className='w-10' />
 
                         <Button
                             id="product-button"
@@ -86,7 +87,7 @@ function Navbar() {
                             ))}
                         </div>
                         <button className='ml-10 flex items-center space-x0.5' onClick={toggleAudioIndicator}>
-                            <audio ref={audioElementRef} className='hidden' src='/audio/Billie Jean - Michael Jackson (Lyrics) - Pizza Music.mp3' loop />
+                            <audio ref={audioElementRef} className='hidden' src={assetPath('audio/Billie Jean - Michael Jackson (Lyrics) - Pizza Music.mp3')} loop />
                             {[1, 2, 3, 4].map((bar) =>
                                 <div key={bar} className={`indecator-line ${isIndicatorActive ? 'active' : ''}`}
                                     style={{ animationDelay: `${bar * 0.1}s` }}

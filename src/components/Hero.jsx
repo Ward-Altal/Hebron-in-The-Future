@@ -5,6 +5,7 @@ import { TiLocationArrow } from 'react-icons/ti';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { assetPath } from '../utils/assetPath';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -88,7 +89,7 @@ function Hero() {
         setCurrentIndex(upcomingvideoIndex);
     }
 
-    const getVideosrc = (index) => `videos/hero-${index}.mp4`;
+    const getVideosrc = (index) => assetPath(`videos/hero-${index}.mp4`);
     const handleVideoLoad = () => {
         setLoadedVdideos(prev => prev + 1);
     }

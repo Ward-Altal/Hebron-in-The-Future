@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from './Button'
+import { assetPath } from '../utils/assetPath'
 
 function Contact() {
 
@@ -23,11 +24,11 @@ function Contact() {
                 {/* LEFT IMAGE STACK - hidden on small screens */}
                 <div className="absolute hidden md:flex flex-col gap-10 left-5 md:left-10 top-1/2 -translate-y-1/2 z-0">
                     <ImageClipBox
-                        src="img/img5.png"
+                        src={assetPath('img/img5.png')}
                         className="w-36 h-52 md:w-48 md:h-64 rotate-[-6deg] opacity-90"
                     />
                     <ImageClipBox
-                        src="img/img7.png"
+                        src={assetPath('img/img7.png')}
                         className="w-36 h-52 md:w-48 md:h-64 rotate-[8deg] translate-x-4 md:translate-x-6 opacity-90"
                     />
                 </div>
@@ -38,7 +39,7 @@ function Contact() {
                         {/* Glow behind */}
                         <div className="absolute inset-0 blur-3xl rounded-full" />
                         <img
-                            src="img/img11.png"
+                            src={assetPath('img/img11.png')}
                             alt="Miles3"
                             className="w-full h-full object-cover object-center rounded-2xl shadow-2xl transition-transform duration-500 hover:scale-105"
                         />

@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.com/Ward-Altal/Hebron-in-The-Future",
+  "homepage": "https://Ward-Altal.github.io/Hebron-in-The-Future",
   "name": "award",
   "private": true,
   "version": "0.0.0",
@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

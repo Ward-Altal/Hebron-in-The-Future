@@ -3,6 +3,7 @@ import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import AnimatedTitle from './AnimatedTitle'
+import { assetPath } from '../utils/assetPath'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -52,7 +53,7 @@ function About() {
             <div className="relative h-screen" id="clip">
                 <div className="maske-clip-path about-image relative mx-auto overflow-hidden rounded-full w-[60vw] h-[60vh]">
                     <img
-                        src="img/img12.jpg"
+                        src={assetPath('img/img12.jpg')}
                         alt="background"
                         className="absolute left-0 top-0 size-full object-cover rounded-lg"
                     />
